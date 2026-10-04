@@ -1,0 +1,122 @@
+---
+const links = [
+  { href: "#experience", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#courses", label: "Courses" },
+  { href: "#insights", label: "Insights" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="wordmark" href="/" aria-label="Rahul Chaubey Consulting, home">
+      <span class="wm-name">Rahul Chaubey</span>
+      <span class="wm-kind">Consulting</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="menu-label">Menu</span>
+    </button>
+
+    <nav id="site-nav" class="nav" aria-label="Main">
+      <ul>
+        {links.map((l) => <li><a href={l.href}>{l.label}</a></li>)}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>(".menu-toggle");
+  const nav = document.getElementById("site-nav");
+  if (toggle && nav) {
+    const close = () => {
+      toggle.setAttribute("aria-expanded", "false");
+      nav.classList.remove("is-open");
+    };
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("is-open", !open);
+    });
+    nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", close));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  }
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: color-mix(in srgb, var(--stone) 92%, transparent);
+    backdrop-filter: saturate(1.2) blur(8px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 68px;
+  }
+  .wordmark {
+    display: flex;
+    align-items: baseline;
+    gap: 7px;
+    color: var(--graphite);
+    text-decoration: none;
+    font-size: 1.0625rem;
+    letter-spacing: -0.01em;
+  }
+  .wm-name { font-weight: 600; }
+  .wm-kind { font-weight: 400; color: var(--slate); }
+
+  .nav ul { display: flex; gap: clamp(20px, 3vw, 36px); }
+  .nav a {
+    color: var(--graphite);
+    text-decoration: none;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    padding-block: 6px;
+  }
+  .nav a:hover { color: var(--teal); }
+
+  .menu-toggle {
+    display: none;
+    font: inherit;
+    font-weight: 500;
+    font-size: 0.9375rem;
+    color: var(--graphite);
+    background: none;
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    min-height: 40px;
+    padding: 0 14px;
+    cursor: pointer;
+  }
+
+  @media (max-width: 760px) {
+    .menu-toggle { display: inline-flex; align-items: center; }
+    .nav {
+      position: absolute;
+      inset: 68px 0 auto 0;
+      background: var(--stone);
+      border-bottom: 1px solid var(--rule);
+      display: none;
+    }
+    .nav.is-open { display: block; }
+    .nav ul {
+      flex-direction: column;
+      gap: 0;
+      padding: 8px var(--gutter) 20px;
+    }
+    .nav a {
+      display: block;
+      padding-block: 14px;
+      font-size: 1.0625rem;
+      border-top: 1px solid var(--rule);
+    }
+    .nav li:first-child a { border-top: 0; }
+  }
+</style>

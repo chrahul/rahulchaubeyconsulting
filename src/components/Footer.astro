@@ -1,0 +1,36 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <p class="wm"><strong>Rahul Chaubey</strong> Consulting</p>
+    <ul class="foot-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#courses">Courses</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="https://www.linkedin.com/in/chaubeyrahul/" rel="me noopener" target="_blank">LinkedIn</a></li>
+    </ul>
+    <p class="small copy">© {year} Rahul Chaubey Consulting</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer { border-top: 1px solid var(--rule); padding-block: 40px; }
+  .foot {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 16px 32px;
+    align-items: center;
+  }
+  .wm { font-size: 1rem; }
+  .wm strong { font-weight: 600; }
+  .foot-links { display: flex; gap: 24px; flex-wrap: wrap; }
+  .foot-links a { color: var(--slate); text-decoration: none; font-size: 0.9375rem; }
+  .foot-links a:hover { color: var(--teal); }
+  .copy { grid-column: 1 / -1; }
+
+  @media (max-width: 640px) {
+    .foot { grid-template-columns: 1fr; }
+  }
+</style>

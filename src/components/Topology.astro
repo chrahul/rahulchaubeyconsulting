@@ -1,0 +1,123 @@
+---
+/*
+  Many possible paths from a requirement to an outcome.
+  One of them is the reasoned route — drawn last, in the accent.
+  That is the whole idea of the practice: every box has a reason.
+*/
+const N = {
+  req: [52, 220],
+  a1: [182, 92],
+  a2: [182, 220],
+  a3: [182, 348],
+  b1: [322, 150],
+  b2: [322, 292],
+  out: [458, 220],
+};
+
+const quiet = [
+  ["req", "a1"], ["req", "a3"],
+  ["a1", "b1"], ["a1", "b2"],
+  ["a2", "b2"],
+  ["a3", "b1"], ["a3", "b2"],
+  ["b2", "out"],
+];
+
+const chosen = [["req", "a2"], ["a2", "b1"], ["b1", "out"]];
+
+const d = ([a, b]: string[]) => `M${N[a][0]} ${N[a][1]} L${N[b][0]} ${N[b][1]}`;
+const inner = ["a1", "a2", "a3", "b1", "b2"];
+---
+
+<figure class="topology" aria-hidden="true">
+  <svg viewBox="0 0 520 440" role="presentation">
+    <g class="quiet">
+      {quiet.map((e, i) => (
+        <path d={d(e)} pathLength="1" style={`--i:${i}`} />
+      ))}
+    </g>
+
+    <g class="chosen">
+      {chosen.map((e, i) => (
+        <path d={d(e)} pathLength="1" style={`--i:${i}`} />
+      ))}
+    </g>
+
+    <g class="nodes">
+      {inner.map((k, i) => (
+        <circle cx={N[k][0]} cy={N[k][1]} r="7" style={`--i:${i}`} />
+      ))}
+    </g>
+
+    <circle class="end start" cx={N.req[0]} cy={N.req[1]} r="12" />
+    <circle class="end finish" cx={N.out[0]} cy={N.out[1]} r="12" />
+
+    <text class="label" x={N.req[0]} y={N.req[1] + 42} text-anchor="middle">Requirement</text>
+    <text class="label" x={N.out[0]} y={N.out[1] + 42} text-anchor="middle">Outcome</text>
+  </svg>
+</figure>
+
+<style>
+  .topology { margin: 0; }
+  svg { width: 100%; height: auto; overflow: visible; }
+
+  .quiet path {
+    fill: none;
+    stroke: #a9b2ad;
+    stroke-width: 1.75;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 700ms cubic-bezier(.4, 0, .2, 1) forwards;
+    animation-delay: calc(180ms + var(--i) * 70ms);
+  }
+
+  .chosen path {
+    fill: none;
+    stroke: var(--teal);
+    stroke-width: 3.75;
+    stroke-linecap: round;
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw 520ms cubic-bezier(.4, 0, .2, 1) forwards;
+    animation-delay: calc(1200ms + var(--i) * 420ms);
+  }
+
+  .nodes circle {
+    fill: var(--stone);
+    stroke: var(--slate);
+    stroke-width: 1.75;
+    opacity: 0;
+    animation: appear 400ms ease forwards;
+    animation-delay: calc(120ms + var(--i) * 60ms);
+  }
+
+  .end { stroke-width: 2.5; }
+  .start {
+    fill: var(--stone);
+    stroke: var(--graphite);
+  }
+  .finish {
+    fill: var(--stone);
+    stroke: var(--teal);
+    animation: settle 500ms ease forwards;
+    animation-delay: 2420ms;
+  }
+
+  .label {
+    font-family: var(--font);
+    font-size: 16px;
+    fill: var(--slate);
+    font-weight: 500;
+  }
+
+  @keyframes draw { to { stroke-dashoffset: 0; } }
+  @keyframes appear { to { opacity: 1; } }
+  @keyframes settle { to { fill: var(--teal); } }
+
+  /* Respect people who have asked for less motion: show the finished drawing. */
+  @media (prefers-reduced-motion: reduce) {
+    .quiet path, .chosen path { animation: none; stroke-dashoffset: 0; }
+    .nodes circle { animation: none; opacity: 1; }
+    .finish { animation: none; fill: var(--teal); }
+  }
+</style>
