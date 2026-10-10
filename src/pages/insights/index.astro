@@ -1,0 +1,98 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+const entries = (await getCollection("insights"))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title="Insights — Rahul Chaubey Consulting"
+  description="Writing on Cloud, AI, enterprise architecture and technology transformation by Rahul Chaubey."
+>
+  <Header />
+
+  <main id="main">
+    <section class="section intro">
+      <div class="wrap">
+        <h1 class="display">Insights</h1>
+        <p class="lede">
+          Writing about Cloud, AI, enterprise architecture and the technology decisions
+          that matter in practice.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="insights-heading">
+      <div class="wrap">
+        <h2 id="insights-heading" class="sr-only">Articles</h2>
+
+        <div class="insight-list">
+          {entries.map((entry) => (
+            <article class="insight-item">
+              <p class="small">
+                {entry.data.pubDate.toLocaleDateString("en-IN", {
+                  day: "numeric",
+                  month: "long",
+                  year: "numeric",
+                })}
+              </p>
+              <h3 class="heading">
+                <a href={`/insights/${entry.id}/`}>{entry.data.title}</a>
+              </h3>
+              <p class="body">{entry.data.description}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  .intro {
+    padding-block: clamp(56px, 8vw, 96px) clamp(40px, 6vw, 72px);
+  }
+
+  .insight-list {
+    border-top: 1px solid var(--rule);
+  }
+
+  .insight-item {
+    padding-block: 32px 36px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .insight-item .small {
+    margin-bottom: 10px;
+  }
+
+  .insight-item .heading {
+    margin-bottom: 12px;
+  }
+
+  .insight-item .heading a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .insight-item .heading a:hover {
+    color: var(--teal);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
