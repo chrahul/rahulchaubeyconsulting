@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 const LINKEDIN = "https://www.linkedin.com/in/chaubeyrahul/";
 const YOUTUBE = "https://www.youtube.com/@BuildAutomateArchitect";
 const TELEGRAM = "https://t.me/BuildAutomateArchitect";
+const CALENDLY = "https://calendly.com/discover-devops";
 
 // TODO(rahul): set the batch start date, e.g. "Saturday 6 December 2026". Empty = "Dates announced soon".
 const START_DATE = "";
@@ -117,6 +118,7 @@ const faqs = [
         </p>
         <div class="hero-actions">
           <a class="btn" href="#register">Register your interest</a>
+          <a class="btn btn-outline" href={CALENDLY} rel="noopener" target="_blank">Book a 1:1 call with Rahul</a>
           <a class="text-link" href="#timeline">See the 6-weekend plan</a>
         </div>
         <dl class="facts">
@@ -325,6 +327,10 @@ const faqs = [
           <p class="lede">
             Register your interest and I'll get in touch with the batch dates, fee and next steps.
           </p>
+          <div class="call">
+            <p class="body">Not sure it's right for you? Talk it through with me first.</p>
+            <a class="btn btn-outline" href={CALENDLY} rel="noopener" target="_blank">Book a 1:1 call with Rahul</a>
+          </div>
           <dl class="facts compact">
             <div><dt>Next batch</dt><dd>{START_DATE || "Dates announced soon"}</dd></div>
             {FEE && <div><dt>Fee</dt><dd>{FEE}</dd></div>}
@@ -409,6 +415,9 @@ const faqs = [
   .hero { padding-block: clamp(56px, 8vw, 104px) clamp(56px, 8vw, 96px); }
   .hero-inner { display: grid; gap: 26px; }
   .hero-inner .display { max-width: 15em; }
+  .btn-outline { background: transparent; color: var(--graphite); box-shadow: inset 0 0 0 1px var(--graphite); }
+  .btn-outline:hover { background: var(--teal); color: var(--stone); box-shadow: none; }
+  .call { display: grid; gap: 12px; justify-items: start; padding: 20px 0; border-top: 1px solid var(--rule); }
   .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
 
   .facts {
