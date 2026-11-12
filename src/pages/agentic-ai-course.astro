@@ -3,597 +3,598 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const LINKEDIN = "https://www.linkedin.com/in/chaubeyrahul/";
-const YOUTUBE = "https://www.youtube.com/@BuildAutomateArchitect";
-const TELEGRAM = "https://t.me/BuildAutomateArchitect";
+// Cloud2Agent landing page. Programme rules: Drive > Cloud2Agent – Agentic AI Program > 00_Programme_Constitution.
+// No fee or batch date is shown on purpose: leads go to a 1:1 call or WhatsApp.
 const CALENDLY = "https://calendly.com/discover-devops";
-
-// TODO(rahul): set the batch start date, e.g. "Saturday 6 December 2026". Empty = "Dates announced soon".
-const START_DATE = "";
-// TODO(rahul): set the fee, e.g. "₹XX,XXX". Empty = the fee line is hidden.
-const FEE = "";
-// Web3Forms access key (public by design; registrations are emailed to the account owner).
-const WEB3FORMS_KEY = "631c38f9-f2fd-4abf-8725-6f29237bc5a4";
-
-const changing = [
-  {
-    t: "AI writes the first draft",
-    d: "Terraform, pipelines, Dockerfiles and scripts now take minutes, not days. Writing that code alone is worth less every month.",
-  },
-  {
-    t: "Job descriptions have moved",
-    d: "Cloud and DevOps roles now list GenAI, RAG, agents and LLMOps next to AWS, Azure and Kubernetes.",
-  },
-  {
-    t: "Companies want AI in production",
-    d: "Not demos. Secure, monitored, cost-controlled AI systems that run every day — and that is infrastructure work.",
-  },
-];
-
-const mapping = [
-  ["IAM and least privilege", "Agent tool permissions and guardrails"],
-  ["Kubernetes and containers", "Scalable agent deployment"],
-  ["CI/CD pipelines", "LLMOps and evaluation pipelines"],
-  ["Monitoring and observability", "Agent tracing and cost control"],
-];
-
-const week = [
-  { d: "Saturday", t: "6 hrs live", s: "concepts + build", live: true },
-  { d: "Sunday", t: "6 hrs live", s: "build + deploy", live: true },
-  { d: "Mon – Tue", t: "Your lab time", s: "finish the build", live: false },
-  { d: "Mid-week", t: "Live doubt call", s: "get unblocked", live: true },
-  { d: "Thu – Fri", t: "Push to GitHub", s: "ready for Saturday", live: false },
-];
-
-const weekends = [
-  { n: "W1", sat: ["LLMs in Python", "APIs, prompts, structured output"], sun: ["RAG", "Chunking, embeddings, vector search"] },
-  { n: "W2", full: ["Project 1 · Python to Production", "AI triage service in FastAPI → Docker → deployed on EKS"] },
-  { n: "W3", sat: ["AI agents from scratch", "Tools, agent loop, memory, approval"], sun: ["MCP", "Build and secure an MCP server"] },
-  { n: "W4", full: ["Project 2 · EKS SRE Agent", "Diagnose a broken cluster through the EKS MCP server, fix it with your approval"] },
-  { n: "W5", sat: ["Multi-agent systems", "LangGraph and CrewAI"], sun: ["Project 3 · Well-Architected Agent", "Terraform → six-pillar risk report"], sunProject: true },
-  { n: "W6", sat: ["Capstone build", "Supervisor + SRE, review and cost agents"], satProject: true, sun: ["Demo day + career", "Demos, LinkedIn, CV, mock interviews"] },
-];
-
-const projects = [
-  { k: "Project 1 · Weekend 2", t: "Python to Production", s: "FastAPI · Docker · EKS", p: "Take an AI service from “works on my laptop” to running on EKS." },
-  { k: "Project 2 · Weekend 4", t: "EKS SRE Agent", s: "Agents · MCP · Slack", p: "A pod is crashing at 2 a.m. The agent finds why and proposes the fix." },
-  { k: "Project 3 · Weekend 5", t: "Well-Architected Review Agent", s: "RAG · Terraform", p: "Review infrastructure code for security, cost and reliability risks in minutes." },
-  { k: "Capstone · Weekend 6", t: "AI Cloud Operations Platform", s: "Multi-agent · CI/CD · tracing", p: "Several agents run cloud operations together, with a human approving every change.", cap: true },
-];
-
-const outcomes = [
-  "Design end-to-end Agentic AI solutions",
-  "Build AI agents in Python and modern frameworks",
-  "Design RAG and multi-agent architectures",
-  "Connect agents to enterprise systems with MCP",
-  "Deploy and run AI on AWS and Azure",
-  "Explain your design trade-offs like an architect",
-];
-
-const audience = [
-  "Cloud engineers (AWS or Azure)",
-  "DevOps, platform engineers and SREs",
-  "Solution and enterprise architects",
-  "Technical consultants",
-  "Software engineers moving into AI",
-  "Tech leads and engineering managers",
-];
-
-const faqs = [
-  {
-    q: "Do I need a data-science or machine-learning background?",
-    a: "No. This program is about designing, building and running AI systems, not training models. If you have deployed anything to AWS or Azure, you have the foundation.",
-  },
-  {
-    q: "How much time does it take each week?",
-    a: "12 hours live every weekend (6 on Saturday, 6 on Sunday), a short mid-week doubt-clearing call, and a few hours of lab work during the week. The program runs for 6 weekends.",
-  },
-  {
-    q: "What should I do before the first weekend?",
-    a: "Watch the free foundations playlist on YouTube covering AI, LLMs and Transformers. It means every live hour goes into building.",
-  },
-  {
-    q: "Is there a job guarantee?",
-    a: "No. The program builds real capability and a portfolio you can show — 4 working repos, a capstone you can explain, and interview preparation. The career move is yours to make, and we support it.",
-  },
-];
+const WHATSAPP = "918919259066";
+const WA_LINK = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hi Rahul, I want to know more about the Cloud2Agent Agentic AI program.")}`;
+const WA_FEES = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Hi Rahul, please share the fees and next batch date for Cloud2Agent.")}`;
 ---
 
 <BaseLayout
-  title="Agentic AI for Cloud & DevOps Professionals — Rahul Chaubey Consulting"
-  description="A 6-weekend live program for Cloud and DevOps engineers: build AI agents, RAG and MCP integrations, and deploy them on AWS and Azure. 3 real-world projects and a capstone."
+  title="Cloud2Agent – Agentic AI Program for Experienced Cloud & DevOps Professionals | Rahul Chaubey Consulting"
+  description="Cloud2Agent: a 10-week live Agentic AI program for experienced Cloud, DevOps, SRE and Platform engineers. Design, build and deploy production-grade AI agents on AWS. LLMs, RAG, MCP, multi-agent systems, GitHub portfolio, interview and career support."
 >
   <Header />
-
   <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="wrap hero-inner">
-        <p class="kicker">Live program · 6 weekends · For Cloud &amp; DevOps engineers</p>
-        <h1 class="display">Agentic AI for Cloud &amp; DevOps Professionals</h1>
-        <p class="lede">
-          From Cloud Engineering to Enterprise AI Solution Architecture. Learn to design, build
-          and deploy AI agents on AWS and Azure — without throwing away a single skill you
-          already have.
-        </p>
-        <div class="hero-actions">
-          <a class="btn" href="#register">Register your interest</a>
-          <a class="btn btn-outline" href={CALENDLY} rel="noopener" target="_blank">Book a 1:1 call with Rahul</a>
-          <a class="text-link" href="#timeline">See the 6-weekend plan</a>
-        </div>
-        <dl class="facts">
-          <div><dt>Format</dt><dd>Live, Sat &amp; Sun, 6 hrs each</dd></div>
-          <div><dt>Duration</dt><dd>6 weekends</dd></div>
-          <div><dt>You build</dt><dd>3 projects + 1 capstone</dd></div>
-          <div><dt>Next batch</dt><dd>{START_DATE || "Dates announced soon"}</dd></div>
-        </dl>
-      </div>
-    </section>
 
-    <!-- Problem -->
-    <section class="section" aria-labelledby="prob-h">
-      <div class="wrap">
-        <p class="eyebrow">The problem</p>
-        <h2 id="prob-h" class="heading">Your job is already changing</h2>
-        <ul class="ruled three">
-          {changing.map((c) => (
-            <li>
-              <h3 class="subheading">{c.t}</h3>
-              <p class="body">{c.d}</p>
-            </li>
-          ))}
+
+<!-- HERO -->
+<section class="hero first">
+  <div class="wrap">
+    <p class="eyebrow">Live program · 10 weekends · For experienced Cloud &amp; DevOps professionals</p>
+    <h1><span class="brand">Cloud2Agent</span><br>Agentic AI Engineering &amp; Architecture</h1>
+    <p class="sub">Design, build and deploy production-grade Agentic AI systems on AWS, using the Cloud and DevOps experience you already have.</p>
+    <p class="lead">Think like an AI Solution Architect. Build like an AI Engineer. Deploy like a Cloud/DevOps Engineer. You don't restart your career. You add the AI layer on top of it.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href={CALENDLY} target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        Book a free 1:1 call with Rahul</a>
+      <a class="btn btn-wa" href={WA_LINK} target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg>
+        WhatsApp Rahul</a>
+    </div>
+    <div class="facts">
+      <div><small>Duration</small><strong>10 weekends</strong></div>
+      <div><small>Live hours</small><strong>80 hours</strong></div>
+      <div><small>Schedule</small><strong>Sat 4h + Sun 4h</strong></div>
+      <div><small>Hands-on cloud</small><strong>AWS + Azure mapping</strong></div>
+      <div><small>You build</small><strong>9 projects + capstone</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <p class="eyebrow">Is this for you?</p>
+    <h2>Built only for experienced professionals</h2>
+    <p class="lead">Ideally 5–20 years in IT, with real exposure to Cloud, DevOps, infrastructure, software or architecture.</p>
+    <div class="grid2" style="margin-top:28px">
+      <div class="card">
+        <h3>This program is for you if you are a</h3>
+        <ul class="ticks">
+          <li>DevOps Engineer or Senior Cloud Engineer (AWS/Azure)</li>
+          <li>SRE or Platform Engineer</li>
+          <li>Cloud, Solution or Technical Architect</li>
+          <li>Engineering Manager or Technical Lead</li>
         </ul>
-        <p class="statement">
-          The engineers in demand next can take AI from <span>demo to production</span>. And
-          production is infrastructure, security and operations work — the work you already do.
-        </p>
       </div>
-    </section>
-
-    <!-- Closer than you think -->
-    <section class="section" aria-labelledby="close-h">
-      <div class="wrap">
-        <p class="eyebrow">The good news</p>
-        <h2 id="close-h" class="heading">You're closer than you think</h2>
-        <div class="map" role="table" aria-label="Skills you have and what they become">
-          <div class="map-row map-head" role="row">
-            <span role="columnheader">What you already know</span>
-            <span aria-hidden="true"></span>
-            <span role="columnheader">What it becomes in Agentic AI</span>
-          </div>
-          {mapping.map(([a, b]) => (
-            <div class="map-row" role="row">
-              <span role="cell">{a}</span>
-              <span class="arrow" aria-hidden="true">→</span>
-              <span role="cell" class="to">{b}</span>
-            </div>
-          ))}
-        </div>
-        <p class="body note">You don't start over. You add the AI layer on top of what you know.</p>
-      </div>
-    </section>
-
-    <!-- Week rhythm -->
-    <section class="section" aria-labelledby="week-h">
-      <div class="wrap">
-        <p class="eyebrow">How it runs</p>
-        <h2 id="week-h" class="heading">Every week: two live days and one doubt-clearing call</h2>
-        <ol class="week">
-          {week.map((w) => (
-            <li class:list={["box", { live: w.live }]}>
-              <strong>{w.d}</strong>
-              <span>{w.t}</span>
-              <span class="small">{w.s}</span>
-            </li>
-          ))}
-        </ol>
-        <p class="small key"><span class="swatch" aria-hidden="true"></span> Live with Rahul. The same rhythm repeats for all 6 weekends.</p>
-      </div>
-    </section>
-
-    <!-- Timeline -->
-    <section id="timeline" class="section" aria-labelledby="tl-h">
-      <div class="wrap">
-        <p class="eyebrow">The plan</p>
-        <h2 id="tl-h" class="heading">Six weekends from your first API call to a cloud capstone</h2>
-        <div class="tl">
-          <div class="tl-pre box">Before weekend 1 · free YouTube foundations on AI, LLMs and Transformers</div>
-          <div class="tl-head" aria-hidden="true"><span></span><span>Saturday · 6 hrs</span><span>Sunday · 6 hrs</span></div>
-          {weekends.map((w) => (
-            <div class="tl-row">
-              <span class="tl-n">{w.n}</span>
-              {w.full ? (
-                <div class="box live tl-full"><strong>{w.full[0]}</strong><span class="small">{w.full[1]}</span></div>
-              ) : (
-                <>
-                  <div class:list={["box", { live: w.satProject }]}><strong><span class="tl-day">Sat · </span>{w.sat[0]}</strong><span class="small">{w.sat[1]}</span></div>
-                  <div class:list={["box", { live: w.sunProject }]}><strong><span class="tl-day">Sun · </span>{w.sun[0]}</strong><span class="small">{w.sun[1]}</span></div>
-                </>
-              )}
-            </div>
-          ))}
-        </div>
-        <p class="small key"><span class="swatch" aria-hidden="true"></span> Project build time. A mid-week doubt-clearing call runs every week.</p>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section class="section" aria-labelledby="proj-h">
-      <div class="wrap">
-        <p class="eyebrow">What you build</p>
-        <h2 id="proj-h" class="heading">3 real-world projects + 1 capstone, in your own GitHub</h2>
-        <ol class="projects">
-          {projects.map((p) => (
-            <li class:list={["box", { live: p.cap }]}>
-              <span class="small">{p.k}</span>
-              <h3 class="subheading">{p.t}</h3>
-              <p class="body">{p.p}</p>
-              <span class="stack">{p.s}</span>
-            </li>
-          ))}
-        </ol>
-        <p class="small">Projects 2 and 3 become agents inside the capstone.</p>
-      </div>
-    </section>
-
-    <!-- Capstone flow -->
-    <section class="section" aria-labelledby="cap-h">
-      <div class="wrap cap-grid">
-        <div class="cap-text">
-          <p class="eyebrow">The capstone</p>
-          <h2 id="cap-h" class="heading">AI Cloud Operations Platform</h2>
-          <p class="body">
-            Agents investigate, and nothing changes in the cloud without human approval. This is
-            the system you show in an interview: multiple agents, real cloud tools, an approval
-            step, and production practices around it.
-          </p>
-        </div>
-        <ol class="flow" aria-label="Capstone flow">
-          <li class="box">An alert fires, or an engineer asks in Slack</li>
-          <li class="box"><strong>ChatOps API</strong></li>
-          <li class="box live"><strong>Supervisor agent</strong> decides who handles it</li>
-          <li class="flow-agents">
-            <span class="box"><strong>SRE agent</strong><span class="small">pods, logs, events</span></span>
-            <span class="box"><strong>Review agent</strong><span class="small">Well-Architected checks</span></span>
-            <span class="box"><strong>Cost agent</strong><span class="small">spend and waste</span></span>
-          </li>
-          <li class="box">MCP tools (EKS, CloudWatch, Cost Explorer) + RAG over runbooks</li>
-          <li class="box gate"><strong>Human approval before any change</strong></li>
-          <li class="box">Fix applied + report posted back to Slack</li>
-          <li class="flow-base small">Runs on AWS or Azure · EKS / AKS · IaC · CI/CD · tracing and evals</li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Outcomes + audience -->
-    <section class="section" aria-label="Outcomes and audience">
-      <div class="wrap two-col">
-        <div>
-          <h2 class="heading">After this program, you can</h2>
-          <ul class="checks">
-            {outcomes.map((o) => <li>{o}</li>)}
-          </ul>
-          <p class="small">Plus code reviews, LinkedIn and CV support, and mock interviews on the final weekend.</p>
-        </div>
-        <div>
-          <h2 class="heading">Who it's for</h2>
-          <ul class="checks">
-            {audience.map((a) => <li>{a}</li>)}
-          </ul>
-          <p class="small">You don't need a data-science background.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Instructor -->
-    <section class="section" aria-labelledby="ins-h">
-      <div class="wrap">
-        <p class="eyebrow">Your instructor</p>
-        <h2 id="ins-h" class="heading">Rahul Chaubey</h2>
-        <p class="lede">Director, Cloud and AI Engineering at Winfo Solutions.</p>
-        <ul class="ruled three ins">
-          <li><p class="body">Two decades across AWS, Microsoft and Oracle — from Unix sysadmin to DevOps lead, Technical Account Manager and architect.</p></li>
-          <li><p class="body">Built a cloud and AI practice from zero to around forty engineers, and has shipped agentic AI to production on AWS Bedrock.</p></li>
-          <li><p class="body">M.Tech BITS Pilani, EGMP IIM Bangalore, Agentic AI certificate from IIT Madras. Teaches live batches for Scaler and Intellipaat.</p></li>
+      <div class="card">
+        <h3>This program is not for you if you are</h3>
+        <ul class="cross">
+          <li>A fresher or student without industry experience</li>
+          <li>Expecting Cloud or Linux fundamentals from scratch</li>
+          <li>Looking for basic Python training</li>
+          <li>Expecting a placement guarantee</li>
         </ul>
-        <p class="links">
-          <a class="text-link" href={YOUTUBE} rel="noopener" target="_blank">YouTube</a>
-          <a class="text-link" href={LINKEDIN} rel="me noopener" target="_blank">LinkedIn</a>
-          <a class="text-link" href={TELEGRAM} rel="noopener" target="_blank">Telegram</a>
-        </p>
       </div>
-    </section>
+    </div>
+    <p class="note">This program does not teach Cloud fundamentals, Linux fundamentals or programming from scratch. Not sure if you fit? <a href={CALENDLY} target="_blank" rel="noopener"><b>Book a free 1:1 call</b></a> and Rahul will tell you honestly.</p>
+  </div>
+</section>
 
-    <!-- FAQ -->
-    <section class="section" aria-labelledby="faq-h">
-      <div class="wrap">
-        <h2 id="faq-h" class="heading">Questions</h2>
-        <div class="faq">
-          {faqs.map((f) => (
-            <details>
-              <summary>{f.q}</summary>
-              <p class="body">{f.a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-    </section>
+<!-- OUTCOME -->
+<section id="outcome">
+  <div class="wrap">
+    <p class="eyebrow">The outcome</p>
+    <h2>After 10 weekends, you will be able to</h2>
+    <div class="grid3" style="margin-top:28px">
+      <div class="card"><h3>Understand</h3><p>How LLMs, Transformers, RAG, AI agents, MCP and multi-agent systems really work, and when not to use them.</p></div>
+      <div class="card"><h3>Design</h3><p>Enterprise-grade Agentic AI architectures with security, identity, scalability, reliability and observability built in.</p></div>
+      <div class="card"><h3>Build &amp; deploy</h3><p>Working AI applications in Python, deployed on AWS with containers, IaC and CI/CD, and mapped to Azure.</p></div>
+    </div>
+    <p class="lead" style="margin-top:24px">The goal is not another chatbot or proof of concept. It is the ability to design and deliver production-grade AI systems inside a real enterprise.</p>
+  </div>
+</section>
 
-    <!-- Register -->
-    <section id="register" class="section register" aria-labelledby="reg-h">
-      <div class="wrap reg-grid">
-        <div class="reg-text">
-          <h2 id="reg-h" class="display reg-h">Lead the change.</h2>
-          <p class="lede">
-            Register your interest and I'll get in touch with the batch dates, fee and next steps.
-          </p>
-          <div class="call">
-            <p class="body">Not sure it's right for you? Talk it through with me first.</p>
-            <a class="btn btn-outline" href={CALENDLY} rel="noopener" target="_blank">Book a 1:1 call with Rahul</a>
+<!-- METHOD -->
+<section id="method">
+  <div class="wrap">
+    <p class="eyebrow">How you learn</p>
+    <h2>Every topic follows the same six steps</h2>
+    <p class="lead">Not mathematics-heavy. Engineering and architecture first. You learn to understand, review and modify AI-generated code using ChatGPT, Claude Code and OpenAI Codex.</p>
+    <div class="steps">
+      <div><b>Context</b><span>Why does it exist?</span></div>
+      <div><b>Concept</b><span>How does it work?</span></div>
+      <div><b>Architecture</b><span>How do parts connect?</span></div>
+      <div><b>Lab</b><span>Build it yourself</span></div>
+      <div><b>Production</b><span>Run it in an enterprise</span></div>
+      <div><b>Interview</b><span>Explain and defend it</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CURRICULUM -->
+<section id="curriculum">
+  <div class="wrap">
+    <p class="eyebrow">Curriculum</p>
+    <h2>10 weekends, week by week</h2>
+    <p class="lead">Every weekend has a clear goal, a project and a new addition to your GitHub. Tap a week to see all topics.</p>
+    <button class="expand-all" type="button" id="toggleAll">Expand all weeks</button>
+    <div class="weeks">
+
+      <details class="week">
+        <summary><span class="wk">Week 1</span><span class="wt">AI, LLMs and Transformer Architecture<span class="wp">How AI evolved, how LLMs work, and what happens inside a Transformer.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – AI and LLM foundations</h4><ul>
+              <li>Traditional programming vs AI; Machine Learning types</li>
+              <li>Deep learning, neural networks, training vs inference</li>
+              <li>From ML to Generative AI; rule-based vs LLMs vs agents</li>
+              <li>What an LLM is; next-token prediction</li>
+              <li>Tokens, tokenization, context windows, parameters</li>
+              <li>Pre-training, fine-tuning, inference; hallucinations</li></ul></div>
+            <div><h4>Sunday – Transformer architecture</h4><ul>
+              <li>Why Transformers; RNN and LSTM limits</li>
+              <li>Embeddings and positional encoding</li>
+              <li>Self-attention: Query, Key, Value, Softmax</li>
+              <li>Causal masking and multi-head attention</li>
+              <li>Feed-forward, residuals, layer normalization</li>
+              <li>Encoder vs decoder; why GPT is decoder-only</li></ul></div>
           </div>
-          <dl class="facts compact">
-            <div><dt>Next batch</dt><dd>{START_DATE || "Dates announced soon"}</dd></div>
-            {FEE && <div><dt>Fee</dt><dd>{FEE}</dd></div>}
-            <div><dt>Schedule</dt><dd>Sat &amp; Sun, 6 hrs live + mid-week call</dd></div>
-          </dl>
+          <div class="out"><div><b>You build</b>A documented Transformer explanation with diagrams, from input text to generated output.</div><div><b>Your GitHub</b>AI and LLM fundamentals repo with diagrams and notes.</div></div>
         </div>
+      </details>
 
-        <form class="reg-form" action="https://api.web3forms.com/submit" method="POST" data-reg-form>
-          <input type="hidden" name="access_key" value={WEB3FORMS_KEY} />
-          <input type="hidden" name="subject" value="New registration — Agentic AI for Cloud & DevOps Professionals" />
-          <input type="hidden" name="from_name" value="rahulchaubeyconsulting.com" />
-          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+      <details class="week">
+        <summary><span class="wk">Week 2</span><span class="wt">Python Foundations and AI-Assisted Coding<span class="wp">Enough Python to read, review, modify and run AI-generated applications.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – Python for AI engineering</h4><ul>
+              <li>Project setup, virtual environments, dependencies</li>
+              <li>Data types, lists, dictionaries, loops, functions</li>
+              <li>Modules, packages, classes (only what you need)</li>
+              <li>Exceptions, JSON, files, HTTP requests, async basics</li>
+              <li>Config, environment variables, project structure</li></ul></div>
+            <div><h4>Sunday – AI-assisted engineering</h4><ul>
+              <li>ChatGPT, Claude Code and OpenAI Codex for Python</li>
+              <li>Writing clear instructions for coding agents</li>
+              <li>Reviewing, debugging and testing generated code</li>
+              <li>Git and GitHub workflow</li>
+              <li>Handling credentials and secrets safely</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>A FastAPI service with Pydantic models, config, structured logging, health check, error handling and tests.</div><div><b>Your GitHub</b>Your first working Python application with README and setup steps.</div></div>
+        </div>
+      </details>
 
-          <label>Full name<input name="name" type="text" required autocomplete="name" /></label>
-          <label>Email<input name="email" type="email" required autocomplete="email" /></label>
-          <label>Phone / WhatsApp<input name="phone" type="tel" required autocomplete="tel" /></label>
-          <label>Current role<input name="role" type="text" required placeholder="e.g. DevOps Engineer" /></label>
-          <label>Years of experience
-            <select name="experience" required>
-              <option value="">Select</option>
-              <option>0–3 years</option>
-              <option>3–7 years</option>
-              <option>7–12 years</option>
-              <option>12+ years</option>
-            </select>
-          </label>
-          <label>LinkedIn profile <span class="opt">(optional)</span><input name="linkedin" type="url" placeholder="https://linkedin.com/in/…" /></label>
-          <label class="full">What do you want from this program? <span class="opt">(optional)</span><textarea name="goal" rows="3"></textarea></label>
+      <details class="week">
+        <summary><span class="wk">Week 3</span><span class="wt">LLM Engineering and AI Application Architecture<span class="wp">Integrate foundation models into real applications using Amazon Bedrock.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – Working with LLMs</h4><ul>
+              <li>Foundation models, providers and model APIs</li>
+              <li>Amazon Bedrock as the main platform</li>
+              <li>System, user and assistant messages; prompt engineering</li>
+              <li>Temperature, structured JSON output, streaming</li>
+              <li>Tokens, latency, cost, limits, retries</li></ul></div>
+            <div><h4>Sunday – Building LLM applications</h4><ul>
+              <li>LLM application architecture and prompt templates</li>
+              <li>Conversation history and app-level memory</li>
+              <li>External API integration; model selection trade-offs</li>
+              <li>Config, secrets, logging and error handling</li>
+              <li>Separating business logic from model calls</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>A Python AI Assistant with structured responses, conversation context and operational logging.</div><div><b>Your GitHub</b>LLM application + architecture doc. Azure mapping: Azure OpenAI, AI Foundry.</div></div>
+        </div>
+      </details>
 
-          <button class="btn full" type="submit">Register my interest</button>
-          <p class="small full form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+      <details class="week">
+        <summary><span class="wk">Week 4</span><span class="wt">Retrieval-Augmented Generation (RAG)<span class="wp">Give AI grounded answers from private company knowledge.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – RAG fundamentals</h4><ul>
+              <li>Why LLMs need external knowledge</li>
+              <li>RAG architecture and data flow</li>
+              <li>Ingestion, parsing and chunking strategies</li>
+              <li>Metadata, embeddings, vector databases</li>
+              <li>Similarity search and context building</li></ul></div>
+            <div><h4>Sunday – Advanced RAG engineering</h4><ul>
+              <li>Top-K, metadata filtering, hybrid search, reranking</li>
+              <li>Query transformation and decomposition</li>
+              <li>Grounded answers with citations</li>
+              <li>RAG failure modes and evaluation</li>
+              <li>Agentic RAG; RAG on AWS services</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>An Enterprise Knowledge Base Assistant that answers from company documents with source references.</div><div><b>Your GitHub</b>RAG pipeline, ingestion, diagram, evaluation. Azure mapping: Azure AI Search.</div></div>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary><span class="wk">Week 5</span><span class="wt">Agentic AI and Agents from Scratch<span class="wp">Understand what makes an app agentic, then build the agent loop yourself.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – Agentic AI fundamentals</h4><ul>
+              <li>LLM vs chatbot vs assistant vs agent</li>
+              <li>Workflows vs autonomous agents</li>
+              <li>Planning, task decomposition, execution loop</li>
+              <li>Tool calling, function calling, tool schemas</li>
+              <li>Agent memory; human-in-the-loop; when not to use agents</li></ul></div>
+            <div><h4>Sunday – Building agents in Python</h4><ul>
+              <li>Defining, validating and executing tools</li>
+              <li>Building the agent loop</li>
+              <li>Retries, limits and stopping conditions</li>
+              <li>Permission boundaries and human approval</li>
+              <li>Agentic RAG patterns</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>A Cloud Operations Assistant that reads runbooks, calls approved read-only tools and recommends the next action.</div><div><b>Your GitHub</b>Tool-using agent with documented execution flow.</div></div>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary><span class="wk">Week 6</span><span class="wt">Model Context Protocol (MCP) and Enterprise Integration<span class="wp">Connect agents securely to enterprise tools, systems and data.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – MCP architecture</h4><ul>
+              <li>The enterprise integration problem</li>
+              <li>MCP Host, Client and Server</li>
+              <li>Tools, Resources and Prompts</li>
+              <li>Tool discovery, invocation and lifecycle</li>
+              <li>MCP vs traditional API integration</li></ul></div>
+            <div><h4>Sunday – Building MCP integrations</h4><ul>
+              <li>Build an MCP server in Python</li>
+              <li>Connect a client and an agent</li>
+              <li>Access control, auth and security</li>
+              <li>Containerize and deploy MCP services</li>
+              <li>Enterprise integration patterns</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>An MCP server exposing approved tools and knowledge, connected to your Week 5 agent.</div><div><b>Your GitHub</b>MCP server, client integration, diagram and setup docs.</div></div>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary><span class="wk">Week 7</span><span class="wt">Multi-Agent Systems and Agent Frameworks<span class="wp">Make specialised agents work together, and choose the right framework.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – Multi-agent architecture</h4><ul>
+              <li>Single vs multi-agent; specialised roles</li>
+              <li>Orchestrator and worker pattern</li>
+              <li>Sequential, parallel and hierarchical execution</li>
+              <li>Shared state, delegation, failure recovery</li>
+              <li>Human-in-the-loop orchestration</li></ul></div>
+            <div><h4>Sunday – Agent frameworks</h4><ul>
+              <li>LangChain components</li>
+              <li>LangGraph: nodes, edges, state, checkpoints, approvals</li>
+              <li>CrewAI: agents, tasks, crews</li>
+              <li>LangChain vs LangGraph vs CrewAI</li>
+              <li>Framework vs building from scratch</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>A multi-agent Cloud Operations or research workflow with an orchestrator and shared context.</div><div><b>Your GitHub</b>Multi-agent code, workflow diagram and framework comparison.</div></div>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary><span class="wk">Week 8</span><span class="wt">Enterprise Architecture and Deployment on AWS<span class="wp">Move from local prototype to production-oriented cloud architecture.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – Enterprise architecture design</h4><ul>
+              <li>Prototype vs production architecture</li>
+              <li>Sync vs async; event-driven AI workflows</li>
+              <li>Queues and long-running agent workflows</li>
+              <li>Stateful vs stateless; scaling AI apps</li>
+              <li>Serverless vs containers; networking; trade-offs</li></ul></div>
+            <div><h4>Sunday – AWS implementation</h4><ul>
+              <li>Bedrock, S3, Lambda, API Gateway, DynamoDB, SQS</li>
+              <li>Docker, ECR, ECS / EKS</li>
+              <li>IAM permissions and Secrets Manager</li>
+              <li>Infrastructure as Code and CI/CD</li>
+              <li>Choosing the right AWS pattern for AI workloads</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>Your AI application deployed on AWS in a documented, controlled environment.</div><div><b>Your GitHub</b>Deployment code, IaC, diagram, docs. Azure mapping: Functions, Container Apps, AKS.</div></div>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary><span class="wk">Week 9</span><span class="wt">Security, Evaluation, Monitoring and LLMOps<span class="wp">Secure, test, observe and operate AI systems like production software.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – AI security and governance</h4><ul>
+              <li>Prompt injection (direct and indirect)</li>
+              <li>Data leakage and sensitive data exposure</li>
+              <li>Tool security, least privilege, IAM boundaries</li>
+              <li>Guardrails, approvals, audit logging</li>
+              <li>Responsible AI; multi-agent security</li></ul></div>
+            <div><h4>Sunday – Evaluation, monitoring, LLMOps</h4><ul>
+              <li>LLM, RAG and agent evaluation</li>
+              <li>Evaluation datasets and regression testing</li>
+              <li>Tracing, logs, metrics; token and latency monitoring</li>
+              <li>Cost optimisation and reliability</li>
+              <li>CI/CD for AI; CloudWatch monitoring</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>A hardened, evaluated and monitored version of your AI application.</div><div><b>Your GitHub</b>Security checklist, eval suite, monitoring docs. Azure mapping: Entra ID, Azure Monitor.</div></div>
+        </div>
+      </details>
+
+      <details class="week">
+        <summary><span class="wk">Week 10</span><span class="wt">Capstone and Career Readiness<span class="wp">Present your enterprise platform, then prepare your portfolio, LinkedIn, resume and interviews.</span></span><span class="plus">+</span></summary>
+        <div class="wbody">
+          <div class="days">
+            <div><h4>Saturday – Capstone demo</h4><ul>
+              <li>Enterprise Cloud Operations Agentic AI Platform</li>
+              <li>Architecture walkthrough and live demo</li>
+              <li>Security and permission model</li>
+              <li>Evaluation results and design decisions</li></ul></div>
+            <div><h4>Sunday – Career readiness</h4><ul>
+              <li>GitHub portfolio review</li>
+              <li>LinkedIn positioning and project posts</li>
+              <li>Resume tailored to AI job descriptions</li>
+              <li>Interview and mock-interview preparation</li>
+              <li>Job search and application strategy</li></ul></div>
+          </div>
+          <div class="out"><div><b>You build</b>The final capstone, a documented GitHub portfolio and a career-readiness plan.</div><div><b>Your GitHub</b>Capstone repo with architecture, README, deployment and evaluation.</div></div>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAPSTONE -->
+<section id="capstone">
+  <div class="wrap">
+    <div class="cap">
+      <p class="eyebrow">Your capstone</p>
+      <h2>Enterprise Cloud Operations Agentic AI Platform</h2>
+      <p>Cloud and DevOps teams fight incidents, search runbooks and dig through monitoring data every day. You build an AI platform that helps engineers investigate, gather evidence and recommend fixes, with a human approving anything sensitive. It is a project you can explain in any interview, because it solves your own daily problem.</p>
+      <ul>
+        <li>Natural-language operational questions</li>
+        <li>RAG over runbooks and architecture docs</li>
+        <li>Planning and specialised agents</li>
+        <li>Approved tools connected through MCP</li>
+        <li>Read-only evidence gathering and verification</li>
+        <li>Human approval before sensitive actions</li>
+        <li>Audit history and investigation reports</li>
+        <li>Deployed on AWS with IAM, evaluation and observability</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU GET -->
+<section id="get" class="gets">
+  <div class="wrap">
+    <p class="eyebrow">What you get</p>
+    <h2>More than 80 hours of classes</h2>
+    <p class="lead">This is a technical and career transformation program. Here is everything included.</p>
+    <div class="grid3" style="margin-top:28px">
+      <div class="card"><p class="num">01</p><h3>Enterprise AI skills</h3><p>LLMs, RAG, agents, MCP, multi-agent systems, security and AWS deployment, with Azure equivalents.</p></div>
+      <div class="card"><p class="num">02</p><h3>Your GitHub portfolio</h3><p>Built step by step, one project every week, with READMEs, architecture diagrams and design decisions.</p></div>
+      <div class="card"><p class="num">03</p><h3>Interview questions for every topic</h3><p>Concept, direct, architecture, scenario and troubleshooting questions, and how to answer them.</p></div>
+      <div class="card"><p class="num">04</p><h3>LinkedIn profile</h3><p>Headline, About section, project showcases and posts that reflect what you built.</p></div>
+      <div class="card"><p class="num">05</p><h3>Resume and job applications</h3><p>A project-based resume, help finding matching roles, CV tailored to each job, and help applying.</p></div>
+      <div class="card"><p class="num">06</p><h3>Mock interviews and recordings</h3><p>Mock interviews with Rahul, honest feedback, and recordings of every live session.</p></div>
+    </div>
+    <p class="note">We give real job-search and application support. We do not promise employment or guaranteed placement.</p>
+  </div>
+</section>
+
+<!-- GITHUB -->
+<section id="github">
+  <div class="wrap grid2" style="align-items:center">
+    <div>
+      <p class="eyebrow">Proof of skill</p>
+      <h2>Your GitHub after 10 weeks</h2>
+      <p class="lead">Recruiters and hiring managers don't just read your resume. They open your GitHub. By the last weekend, yours shows real, documented, working AI systems.</p>
+    </div>
+    <div class="repo">
+      <div><span class="dir">01-ai-llm-foundations/</span> <span class="c"># Transformer diagrams</span></div>
+      <div><span class="dir">02-python-fastapi-service/</span> <span class="c"># first service</span></div>
+      <div><span class="dir">03-llm-assistant-bedrock/</span></div>
+      <div><span class="dir">04-enterprise-rag-assistant/</span></div>
+      <div><span class="dir">05-cloudops-agent/</span></div>
+      <div><span class="dir">06-mcp-server/</span></div>
+      <div><span class="dir">07-multi-agent-workflow/</span></div>
+      <div><span class="dir">08-aws-deployment/</span> <span class="c"># IaC + CI/CD</span></div>
+      <div><span class="dir">09-security-eval-llmops/</span></div>
+      <div><span class="dir">capstone-cloudops-agentic-platform/</span> <span class="c"># ★</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUCTOR -->
+<section id="instructor">
+  <div class="wrap inst">
+    <div>
+      <p class="eyebrow">Your instructor</p>
+      <h2>Rahul Chaubey</h2>
+      <p class="lead">Director, Cloud and AI Engineering. Two decades in IT, from Solaris/Unix sysadmin to AWS, DevOps lead, Technical Account Manager and cloud architect. He teaches what he builds and runs every day.</p>
+    </div>
+    <ul class="creds">
+      <li>Two decades of enterprise IT across AWS, Azure and Oracle environments</li>
+      <li>Built a cloud and AI engineering practice from zero to about forty engineers</li>
+      <li>M.Tech in Data Science &amp; Machine Learning, BITS Pilani</li>
+      <li>Executive General Management Programme, IIM Bangalore</li>
+      <li>Professional Certificate in Agentic AI, IIT Madras</li>
+      <li>Five years of running live batches for working professionals</li>
+      <li>YouTube: <a href="https://www.youtube.com/@BuildAutomateArchitect" target="_blank" rel="noopener">Build Automate Architect</a> · <a href="https://www.linkedin.com/in/chaubeyrahul/" target="_blank" rel="noopener">LinkedIn</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FEES -->
+<section id="fees">
+  <div class="wrap">
+    <p class="eyebrow">Fees and next batch</p>
+    <h2>Talk to Rahul first</h2>
+    <p class="lead">Seats are limited so every student gets project reviews and mock interviews. Fees, payment options and the next batch date are shared on a free 1:1 call, where Rahul also checks that the program fits your experience and goals.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href={CALENDLY} target="_blank" rel="noopener">Book a free 1:1 call with Rahul</a>
+      <a class="btn btn-wa" href={WA_FEES} target="_blank" rel="noopener">Ask on WhatsApp: +91-8919259066</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2>Frequently asked questions</h2>
+    <details><summary>Do I need to know Python?</summary><p>Basic familiarity helps, but it is not required. Week 2 is a full weekend on the Python you need, plus using AI coding assistants. Recorded Python lessons are also provided for revision. You are not trained as a Python developer; you learn to understand, review and modify AI-generated code.</p></details>
+    <details><summary>Do I need a maths or data-science background?</summary><p>No. We explain the intuition behind the maths. Advanced derivations are optional reading. The focus is engineering and architecture.</p></details>
+    <details><summary>Is Azure covered?</summary><p>All hands-on labs and deployments use AWS. For every major design, we map the equivalent Azure services and architecture, so you can explain both in interviews.</p></details>
+    <details><summary>I am a fresher. Can I join?</summary><p>No. Cloud2Agent is only for experienced professionals with real Cloud, DevOps, SRE, software or architecture exposure. It does not teach Cloud, Linux or programming from scratch.</p></details>
+    <details><summary>What if I miss a live session?</summary><p>Every live session is recorded, so you can watch it and catch up before the next weekend.</p></details>
+    <details><summary>Will I get a job after this program?</summary><p>We help you build your GitHub, LinkedIn and resume, find matching roles, tailor your CV and apply, and we run mock interviews. We do not promise or guarantee placement.</p></details>
+    <details><summary>What are the fees and when does the next batch start?</summary><p>Book a free 1:1 call with Rahul or send a WhatsApp message to +91-8919259066. Fees, payment options and dates are shared there.</p></details>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final">
+  <div class="wrap">
+    <p class="eyebrow">Cloud2Agent</p>
+    <h2>Your cloud experience is your advantage.<br>Add the AI layer.</h2>
+    <p class="lead">Learn it. Design it. Build it. Document it. Explain it. Present it.</p>
+    <div class="btns">
+      <a class="btn btn-primary" href={CALENDLY} target="_blank" rel="noopener">Book a free 1:1 call with Rahul</a>
+      <a class="btn btn-wa" href={WA_LINK} target="_blank" rel="noopener">WhatsApp Rahul</a>
+    </div>
+  </div>
+</section>
+
   </main>
-
   <Footer />
+  <div class="mbar">
+  <a class="b1" href={CALENDLY} target="_blank" rel="noopener">Book 1:1 call</a>
+  <a class="b2" href={WA_LINK} target="_blank" rel="noopener">WhatsApp</a>
+</div>
 </BaseLayout>
 
 <script>
-  const form = document.querySelector<HTMLFormElement>("[data-reg-form]");
-  if (form) {
-    const status = form.querySelector<HTMLElement>(".form-status");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector<HTMLButtonElement>("button[type=submit]");
-      if (btn) btn.disabled = true;
-      if (status) status.textContent = "Sending…";
-      try {
-        const res = await fetch(form.action, {
-          method: "POST",
-          headers: { Accept: "application/json" },
-          body: new FormData(form),
-        });
-        const json = await res.json();
-        if (res.ok && json.success) {
-          form.reset();
-          if (status) status.textContent = "Thank you — you're registered. I'll be in touch with the batch details soon.";
-        } else {
-          throw new Error(json.message || "Submission failed");
-        }
-      } catch {
-        if (status) status.textContent = "Something went wrong. Please try again, or message me on LinkedIn.";
-      } finally {
-        if (btn) btn.disabled = false;
-      }
-    });
-  }
+(function(){
+  var b=document.getElementById('toggleAll');
+  if(!b) return;
+  b.addEventListener('click',function(){
+    var w=document.querySelectorAll('details.week');
+    var open=b.getAttribute('data-open')!=='1';
+    w.forEach(function(d){d.open=open});
+    b.setAttribute('data-open',open?'1':'0');
+    b.textContent=open?'Collapse all weeks':'Expand all weeks';
+  });
+})();
 </script>
 
 <style>
-  .eyebrow, .kicker {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--teal);
-    margin-bottom: 14px;
-  }
+h1,h2,h3{line-height:1.15;margin:0;font-weight:600;letter-spacing:-.01em}
+h1{font-size:clamp(34px,5.4vw,58px)}
+h2{font-size:clamp(26px,3.2vw,36px);margin-bottom:14px}
+h3{font-size:19px}
+p{margin:0 0 14px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.lead{font-size:19px;color:var(--slate);max-width:720px}
+section{padding:72px 0;border-top:1px solid var(--rule)}
+section.first{border-top:none}
 
-  /* Hero */
-  .hero { padding-block: clamp(56px, 8vw, 104px) clamp(56px, 8vw, 96px); }
-  .hero-inner { display: grid; gap: 26px; }
-  .hero-inner .display { max-width: 15em; }
-  .btn-outline { background: transparent; color: var(--graphite); box-shadow: inset 0 0 0 1px var(--graphite); }
-  .btn-outline:hover { background: var(--teal); color: var(--stone); box-shadow: none; }
-  .call { display: grid; gap: 12px; justify-items: start; padding: 20px 0; border-top: 1px solid var(--rule); }
-  .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:8px;font-weight:600;font-size:16px;text-decoration:none;border:1.5px solid var(--graphite);transition:transform .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--graphite);color:var(--stone)}
+.btn-wa{background:#1F9D55;border-color:#1F9D55;color:#fff}
+.btn svg{width:18px;height:18px;flex:none}
 
-  .facts {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0;
-    margin: 16px 0 0;
-    border-top: 1px solid var(--graphite);
-  }
-  .facts div { padding: 16px 20px 0 0; }
-  .facts dt { font-size: 0.875rem; color: var(--slate); }
-  .facts dd { margin: 4px 0 0; font-weight: 600; }
-  .facts.compact { grid-template-columns: 1fr; border-top: 0; margin-top: 8px; }
-  .facts.compact div { padding: 12px 0; border-top: 1px solid var(--rule); }
+/* hero */
+.hero{padding:72px 0 56px}
+.hero h1 .brand{color:var(--teal)}
+.hero .sub{font-size:22px;font-weight:500;margin:18px 0 12px;max-width:760px}
+.facts{display:grid;grid-template-columns:repeat(5,1fr);border-top:2px solid var(--graphite);margin-top:48px}
+.facts div{padding:16px 16px 0 0}
+.facts small{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--slate)}
+.facts strong{display:block;font-size:17px;font-weight:600;margin-top:4px}
+@media(max-width:820px){.facts{grid-template-columns:repeat(2,1fr)}}
 
-  /* Ruled columns — same idiom as the homepage services */
-  .ruled { display: grid; gap: 32px clamp(24px, 4vw, 56px); margin-top: 40px; }
-  .ruled.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .ruled li { display: grid; gap: 12px; align-content: start; padding-top: 22px; border-top: 1px solid var(--graphite); }
+/* cards / grids */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:820px){.grid2,.grid3{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:24px}
+.card h3{margin-bottom:10px}
+.card p:last-child{margin-bottom:0}
+ul.ticks,ul.cross{list-style:none;margin:0;padding:0}
+ul.ticks li,ul.cross li{position:relative;padding-left:30px;margin-bottom:10px}
+ul.ticks li::before{content:"✓";position:absolute;left:0;top:0;color:var(--teal);font-weight:700}
+ul.cross li::before{content:"✕";position:absolute;left:0;top:0;color:#B4483C;font-weight:700}
+.note{background:#DCEBE6;border-left:4px solid var(--teal);padding:16px 20px;border-radius:6px;font-size:16px;margin-top:22px}
 
-  .statement {
-    margin-top: clamp(48px, 6vw, 72px);
-    font-size: clamp(1.375rem, 2.4vw, 1.875rem);
-    line-height: 1.3;
-    font-weight: 600;
-    letter-spacing: -0.012em;
-    max-width: 30em;
-    text-wrap: balance;
-  }
-  .statement span { color: var(--teal); }
+/* method steps */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:12px;counter-reset:s;margin-top:28px}
+.steps div{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:18px 16px}
+.steps div::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--graphite);color:var(--stone);font-size:14px;font-weight:600;margin-bottom:10px}
+.steps b{display:block;font-size:16px}
+.steps span{font-size:14px;color:var(--slate)}
+@media(max-width:900px){.steps{grid-template-columns:repeat(2,1fr)}}
 
-  /* Skill mapping */
-  .map { margin-top: 36px; max-width: 900px; }
-  .map-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr);
-    align-items: center;
-    padding-block: 16px;
-    border-top: 1px solid var(--rule);
-    font-weight: 500;
-  }
-  .map-head { font-size: 0.875rem; color: var(--slate); font-weight: 500; border-top: 0; padding-bottom: 8px; }
-  .arrow { color: var(--teal); text-align: center; }
-  .to { color: var(--teal); }
-  .note { margin-top: 20px; }
+/* curriculum */
+.weeks{margin-top:28px;border-top:2px solid var(--graphite)}
+details.week{border-bottom:1px solid var(--rule)}
+details.week summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:90px 1fr 28px;gap:16px;align-items:start;padding:20px 0}
+details.week summary::-webkit-details-marker{display:none}
+.wk{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);padding-top:3px}
+.wt{font-size:20px;font-weight:600}
+.wp{display:block;font-size:15px;color:var(--slate);font-weight:400;margin-top:4px}
+.plus{font-size:24px;line-height:1;color:var(--slate);transition:transform .2s}
+details[open] .plus{transform:rotate(45deg)}
+.wbody{padding:0 0 26px 106px}
+.wbody .days{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.wbody h4{margin:0 0 8px;font-size:15px;font-weight:600}
+.wbody ul{margin:0 0 6px;padding-left:18px;font-size:15px;color:#333a36}
+.wbody li{margin-bottom:4px}
+.wbody .out{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wbody .out div{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:14px 16px;font-size:15px}
+.wbody .out b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+@media(max-width:820px){details.week summary{grid-template-columns:70px 1fr 24px}.wbody{padding-left:0}.wbody .days,.wbody .out{grid-template-columns:1fr}}
+.expand-all{background:none;border:1px solid var(--graphite);border-radius:6px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;margin-top:10px}
 
-  /* Boxes — outlined, teal tint for live/project */
-  .box {
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    background: var(--paper);
-    padding: 16px 18px;
-    display: grid;
-    gap: 4px;
-    align-content: start;
-  }
-  .box.live {
-    border-color: var(--teal);
-    background: color-mix(in srgb, var(--teal) 8%, var(--paper));
-  }
-  .box.gate {
-    border-color: #b7791f;
-    background: color-mix(in srgb, #b7791f 10%, var(--paper));
-  }
-  .key { display: flex; align-items: center; gap: 8px; margin-top: 16px; }
-  .swatch {
-    width: 14px; height: 14px; border-radius: 3px;
-    border: 1px solid var(--teal);
-    background: color-mix(in srgb, var(--teal) 8%, var(--paper));
-  }
+/* capstone */
+.cap{background:var(--graphite);color:var(--stone);border-radius:14px;padding:44px}
+.cap .eyebrow{color:#7FD1BC}
+.cap p{color:#C9CFCB}
+.cap ul{columns:2;column-gap:32px;padding-left:18px;margin:18px 0 0}
+.cap li{margin-bottom:8px;break-inside:avoid}
+@media(max-width:820px){.cap{padding:28px}.cap ul{columns:1}}
 
-  /* Week */
-  .week { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin-top: 36px; }
-  .week .box { text-align: center; }
+/* gets */
+.gets .card .num{font-size:13px;font-weight:600;color:var(--teal);letter-spacing:.1em}
 
-  /* Timeline */
-  .tl { display: grid; gap: 10px; margin-top: 36px; }
-  .tl-pre { text-align: center; background: transparent; border-style: dashed; margin-left: 56px; }
-  .tl-head, .tl-row { display: grid; grid-template-columns: 46px 1fr 1fr; gap: 10px; align-items: stretch; }
-  .tl-head span { font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--slate); text-align: center; padding-top: 6px; }
-  .tl-n { font-weight: 600; align-self: center; }
-  .tl-full { grid-column: 2 / 4; text-align: center; }
-  .tl-row .box { text-align: center; }
-  .tl-day { display: none; }
+/* github */
+.repo{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:22px 24px;line-height:1.9}
+.repo .dir{color:var(--teal);font-weight:600}
+.repo .c{color:var(--slate)}
 
-  /* Projects */
-  .projects { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 36px 0 16px; }
-  .projects .box { gap: 10px; padding: 22px; }
-  .stack { font-size: 0.875rem; font-weight: 500; color: var(--teal); margin-top: auto; }
+/* instructor */
+.inst{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+@media(max-width:820px){.inst{grid-template-columns:1fr}}
+.creds{list-style:none;padding:0;margin:0}
+.creds li{padding:12px 0;border-bottom:1px solid var(--rule)}
+.creds li:first-child{border-top:2px solid var(--graphite)}
 
-  /* Capstone flow */
-  .cap-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px clamp(32px, 6vw, 96px); align-items: start; }
-  .cap-text { display: grid; gap: 16px; }
-  .flow { display: grid; gap: 22px; position: relative; }
-  .flow > li { position: relative; text-align: center; }
-  .flow > li:not(:last-child):not(:nth-last-child(2))::after {
-    content: "↓";
-    position: absolute;
-    left: 50%;
-    bottom: -22px;
-    transform: translateX(-50%);
-    color: var(--slate);
-    font-size: 0.9rem;
-    line-height: 22px;
-  }
-  .flow-agents { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-  .flow-base { border-top: 1px solid var(--rule); padding-top: 12px; }
+/* faq */
+.faq details{border-bottom:1px solid var(--rule);padding:18px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--slate);font-size:22px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:12px 0 0;color:#333a36}
 
-  /* Lists */
-  .two-col { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px clamp(32px, 6vw, 96px); }
-  .two-col > div { display: grid; gap: 20px; align-content: start; }
-  .checks { display: grid; gap: 0; }
-  .checks li { padding: 12px 0 12px 28px; border-top: 1px solid var(--rule); position: relative; font-weight: 500; }
-  .checks li::before { content: "✓"; position: absolute; left: 2px; color: var(--teal); }
+/* final cta */
+.final{text-align:center}
+.final .btns{justify-content:center}
+.final .lead{margin:0 auto}
 
-  .ins { margin-top: 32px; }
-  .links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 28px; }
+/* sticky mobile bar */
+.mbar{display:none}
+@media(max-width:820px){
+  .mbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:30;background:var(--stone);border-top:1px solid var(--rule);padding:10px 12px}
+  .mbar a{display:flex;justify-content:center;align-items:center;gap:8px;padding:12px 8px;border-radius:8px;font-weight:600;font-size:15px;text-decoration:none}
+  .mbar .b1{background:var(--graphite);color:var(--stone)}
+  .mbar .b2{background:#1F9D55;color:#fff}
+  .mbar svg{width:16px;height:16px}
+}
 
-  /* FAQ */
-  .faq { margin-top: 32px; max-width: 820px; }
-  .faq details { border-top: 1px solid var(--rule); padding: 18px 0; }
-  .faq details:last-child { border-bottom: 1px solid var(--rule); }
-  .faq summary { cursor: pointer; font-weight: 600; list-style-position: outside; }
-  .faq details p { margin-top: 10px; }
-
-  /* Register */
-  .register { padding-block: clamp(72px, 10vw, 128px); }
-  .reg-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 40px clamp(32px, 6vw, 96px); align-items: start; }
-  .reg-text { display: grid; gap: 20px; }
-  .reg-form {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px 20px;
-    background: var(--paper);
-    border: 1px solid var(--rule);
-    border-radius: 4px;
-    padding: clamp(20px, 3vw, 32px);
-  }
-  .reg-form label { display: grid; gap: 6px; font-size: 0.9375rem; font-weight: 500; }
-  .reg-form .full { grid-column: 1 / -1; }
-  .reg-form input, .reg-form select, .reg-form textarea {
-    font: inherit;
-    font-size: 1rem;
-    color: var(--graphite);
-    background: var(--stone);
-    border: 1px solid var(--rule);
-    border-radius: 3px;
-    padding: 10px 12px;
-    min-height: 44px;
-    width: 100%;
-  }
-  .reg-form input:focus, .reg-form select:focus, .reg-form textarea:focus { outline: 2px solid var(--teal); outline-offset: 1px; border-color: var(--teal); }
-  .reg-form button { justify-content: center; border: 0; cursor: pointer; }
-  .reg-form button:disabled { opacity: 0.6; cursor: progress; }
-  .opt { color: var(--slate); font-weight: 400; }
-  .hp { display: none; }
-
-  /* Responsive */
-  @media (max-width: 960px) {
-    .ruled.three, .projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .week { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .cap-grid, .reg-grid { grid-template-columns: 1fr; }
-    .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-  @media (max-width: 640px) {
-    .ruled.three, .projects, .two-col, .week { grid-template-columns: 1fr; }
-    .reg-form { grid-template-columns: 1fr; }
-    .tl-head { display: none; }
-    .tl-pre { margin-left: 0; }
-    .tl-row { grid-template-columns: 1fr; }
-    .tl-full { grid-column: auto; }
-    .tl-n { padding-top: 8px; }
-    .tl-day { display: inline; }
-    .flow-agents { grid-template-columns: 1fr; }
-    .map-row { grid-template-columns: 1fr; gap: 4px; }
-    .map-head { display: none; }
-    .arrow { text-align: left; }
-  }
+.wbody ul,.cap ul{list-style:disc}
+.btn-primary:hover{background:var(--teal);color:var(--stone)}
+.btn-wa:hover{background:#178246;color:#fff}
+.card a,.note a{color:var(--graphite)}
+.mbar a,.btn{text-decoration:none}
+@media(max-width:820px){main{padding-bottom:64px}}
 </style>
