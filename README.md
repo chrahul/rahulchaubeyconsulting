@@ -21,8 +21,13 @@ Homepage v1 — static site built with Astro.
 
 ## Deployment
 
-Static output (`dist/`). Hosted on Hostinger via GitHub deploy — to be set up
-once the homepage is approved.
+Static output (`dist/`), hosted on Hostinger.
+
+Every push to `main` runs `.github/workflows/deploy.yml`: GitHub builds the site
+and uploads `dist/` to Hostinger over FTP. No manual upload is needed.
+It needs four repository secrets: FTP_SERVER, FTP_USERNAME, FTP_PASSWORD and
+FTP_DIR (see the comments at the top of the workflow file). To redeploy without
+a code change, run the workflow from the Actions tab ("Run workflow").
 
 ## Open items before publishing
 
